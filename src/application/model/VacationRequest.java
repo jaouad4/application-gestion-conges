@@ -9,7 +9,6 @@ public class VacationRequest {
     private LocalDate startDate;
     private LocalDate endDate;
 
-    // Constructeurs
     public VacationRequest() {}
 
     public VacationRequest(int id, int employeeId, int vacationTypeId, LocalDate startDate, LocalDate endDate) {
@@ -20,7 +19,6 @@ public class VacationRequest {
         this.endDate = endDate;
     }
 
-    // Getters et Setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public int getEmployeeId() { return employeeId; }
