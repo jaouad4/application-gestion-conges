@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="application.presentation.VacationRequestController">
+    <children>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Gestion des demandes de congés" styleClass="title"/>
+            <TableView fx:id="requestTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID"/>
+                    <TableColumn fx:id="employeeColumn" text="Employé"/>
+                    <TableColumn fx:id="typeColumn" text="Type de congé"/>
+                    <TableColumn fx:id="startDateColumn" text="Date de début"/>
+                    <TableColumn fx:id="endDateColumn" text="Date de fin"/>
+                </columns>
+            </TableView>
+
+            <GridPane vgap="5" hgap="5">
+                <ComboBox fx:id="employeeCombo" promptText="Employé"
+                          GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="typeCombo" promptText="Type de congé"
+                          GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <DatePicker fx:id="startDatePicker" promptText="Date de début"
+                            GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <DatePicker fx:id="endDatePicker" promptText="Date de fin"
+                            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="10">
+                <Button text="Nouvelle demande" onAction="#handleNewRequest"/>
+                <Button text="Modifier" onAction="#handleUpdateRequest"/>
+                <Button text="Supprimer" onAction="#handleDeleteRequest"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
